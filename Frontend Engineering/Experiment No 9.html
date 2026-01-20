@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Specificity Demo</title>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Internal CSS -->
+  <style>
+    /* Internal Style Sheet */
+    .text {
+      color: purple;       /* Overrides external class */
+      font-weight: bold;
+    }
+
+    #special {
+      color: red;          /* Overrides external ID */
+      font-style: italic;
+    }
+
+    p {
+      color: green;        /* Overrides external element selector */
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <!-- This paragraph uses class, ID, and inline styles -->
+  <p class="text" id="special" style="color: brown; font-size: 20px;">
+    This text color is brown due to inline style (highest specificity). It also has class "text" and id "special".
+  </p>
+  <!-- Paragraph with only class -->
+  <p class="text">
+    This paragraph uses only class selector and shows purple color (internal CSS).
+  </p>
+<!-- Paragraph with only ID -->
+  <p id="special">
+    This paragraph uses only ID selector and shows red color and italic font style (internal CSS).
+  </p>
+<!-- Paragraph with only element selector -->
+  <p>
+    This paragraph uses only element selector and shows green color with Arial font.
+  </p>
+</body>
+</html>
+  
+  

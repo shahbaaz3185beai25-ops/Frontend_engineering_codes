@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Gradients Demo</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #111;
+      font-family: sans-serif;
+      color: #fff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 220px);
+      gap: 16px;
+    }
+
+    .box {
+      height: 150px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #444;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      font-size: 14px;
+      padding: 6px;
+      box-sizing: border-box;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+    }
+
+    /* 1. Linear gradient */
+    .linear {
+      background-image: linear-gradient(
+        to right,
+        #667eea,
+        #764ba2
+      );
+    }
+
+    /* 2. Radial gradient */
+    .radial {
+      background-image: radial-gradient(
+        circle at center,
+        #ff9a9e,
+        #b13311
+      );
+    }
+
+    /* 3. Conic gradient */
+    .conic {
+      background-image: conic-gradient(
+        from 0deg at center,
+        #ff6a00,
+        #ee0979,
+        #00c9ff,
+        #ff6a00
+      );
+    }
+
+    /* 4. Repeating linear gradient */
+    .repeating-linear {
+      background-image: repeating-linear-gradient(
+        45deg,
+        #222 0px,
+        #222 10px,
+        #4e54c8 10px,
+        #4e54c8 20px
+      );
+    }
+
+    /* 5. Repeating radial gradient */
+    .repeating-radial {
+      background-image: repeating-radial-gradient(
+        circle at center,
+        #ff9a9e 0,
+        #ff9a9e 5px,
+        #222 5px,
+        #222 10px
+      );
+    }
+
+    /* 6. Repeating conic gradient */
+    .repeating-conic {
+      background-image: repeating-conic-gradient(
+        from 0deg at center,
+        #00c9ff 0deg,
+        #00c9ff 10deg,
+        #222 10deg,
+        #222 20deg
+      );
+    }
+
+    @media (max-width: 750px) {
+      .grid {
+        grid-template-columns: repeat(2, 160px);
+      }
+      .box {
+        height: 120px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .grid {
+        grid-template-columns: 1fr;
+        width: 90vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="box linear">linear-gradient()</div>
+    <div class="box radial">radial-gradient()</div>
+    <div class="box conic">conic-gradient()</div>
+    <div class="box repeating-linear">repeating-linear-gradient()</div>
+    <div class="box repeating-radial">repeating-radial-gradient()</div>
+    <div class="box repeating-conic">repeating-conic-gradient()</div>
+  </div>
+</body>
+</html>
+<!---------------------------->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link Related Pseudo-Classes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 20px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: 0.1s;
+    }
+
+    /* :link → applies to links that have not been visited yet */
+    a:link {
+      color: white;
+      background: blue;
+    }
+
+    /* :visited → applies to links that have been visited */
+    a:visited {
+      color: white;
+      background: purple;
+    }
+
+    /* :hover → when mouse pointer is over the link */
+    a:hover {
+      background: orange;
+      color: black;
+    }
+
+    /* :active → when the link is clicked */
+    a:active {
+      background: red;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Link Pseudo-Classes</h1>
+  <p>Click and test the behavior of the links:</p>
+
+  <a href="https://www.google.com" target="_blank">Go to Google</a>
+  <br><br>
+  <a href="https://www.wikipedia.org" target="_blank">Go to Wikipedia</a>
+
+</body>
+</html>
+<!---------------------------------->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple CSS Lightbox</title>
+  <style>
+    .thumb {
+      width: 200px;
+      cursor: pointer;
+      border-radius: 6px;
+      box-shadow: 0 200px 1000px rgba(132, 198, 19, 0.133);
+      transition: box-shadow 0.2s;
+    }
+    .thumb:hover {
+      box-shadow: 10px 9px 1px 1px rgba(12, 171, 34, 0.267);
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.8);
+      text-align: center;
+      z-index: 100;
+    }
+    .lightbox:target {
+      display: block;
+    }
+    .lightbox img {
+      margin: 40px auto 0;
+      width: 60vw;
+      border-radius: 12px;
+      box-shadow: 0 4px 32px #0006;
+    }
+    .close {
+      color: #fff;
+      background: #222C;
+      display: inline-block;
+      margin: 20px 0 0 0;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 20px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .close:hover {
+      background: #c00C;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Simple Lightbox Animation</h2>
+  <!-- Clickable thumbnail -->
+  <a href="#lightbox"><img class="thumb" src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=400&q=80" alt="Thumbnail"></a>
+  <!-- Lightbox overlay -->
+  <div id="lightbox" class="lightbox">
+    <a href="#" class="close">Close</a>
+    <br>
+    <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=900&q=80" alt="Full Size">
+  </div>
+</body>
+</html>
+<!------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Box-Shadow Spread Radius Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      gap: 30px;
+    }
+
+    .box {
+      width: 120px;
+      height: 120px;
+      background: white;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* spread-radius = 0 (default size) */
+    .spread-0 {
+      box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.4);
+    }
+
+    /* positive spread-radius: shadow grows bigger */
+    .spread-positive {
+      box-shadow: 0px 0px 19px 9px rgba(0, 0, 0, 0.4);
+    }
+
+    /* negative spread-radius: shadow becomes tighter/smaller */
+    .spread-negative {
+      box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="box spread-0">
+    spread: 0px
+  </div>
+
+  <div class="box spread-positive">
+    spread: 15px
+  </div>
+
+  <div class="box spread-negative">
+    spread: -5px
+  </div>
+</body>
+</html>
+<!------------------------------>
+<!DOCTYPE html>
+<html>
+  <style>
+    .one::before{
+      content:":) "
+      }
+    .one::after{
+      content:" :@"
+    }
+    .two::before{
+      content:":*)"
+    }
+    .two::after{
+      content:"$$)"
+    }
+  </style>
+  <body>
+    <h1>Pseudo Elements Demo</h1>
+    <div class="one">This is first statement</div>
+    <div class="two">This is second statement</div>
+  </body>
+</html>
+<!--------------------------------->
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #111;
+      margin: 0;
+    }
+    .scene {
+      width: 200px;
+      height: 200px;
+      perspective: 600px;
+    }
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotateCube 10s infinite linear;
+    }
+    .face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: rgba(0, 200, 255, 0.8);
+      border: 2px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #fff;
+    }
+    .front  { transform: rotateY(0deg) translateZ(100px); }
+    .back   { transform: rotateY(180deg) translateZ(100px); }
+    .right  { transform: rotateY(90deg) translateZ(100px); }
+    .left   { transform: rotateY(-90deg) translateZ(100px); }
+    .top    { transform: rotateX(90deg) translateZ(100px); }
+    .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+    @keyframes rotateCube {
+      from { transform: rotateX(0deg) rotateY(0deg); }
+      to   { transform: rotateX(360deg) rotateY(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scene">
+    <div class="cube">
+      <div class="face front">Front</div>
+      <div class="face back">Back</div>
+      <div class="face right">Right</div>
+      <div class="face left">Left</div>
+      <div class="face top">Top</div>
+      <div class="face bottom">Bottom</div>
+    </div>
+  </div>
+</body>
+</html>
+<!-------------------------------->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Basic Responsive Website</title>
+        <style>
+            body{
+                margin:0;
+                font-family:'Courier New', Courier, monospace;
+                text-align:center;
+            }
+            header{
+                background:teal;
+                color:white;
+                padding:15px;
+            }
+            nav{
+                background:#333;
+                padding:10px;
+            }
+            nav a{
+                color:white;
+                margin:10px;
+                text-decoration:none;
+                display:inline-block;
+            }
+            .box{
+                background:#f2f2f2;
+                margin:5px;
+                padding:20px;
+                width:25%;
+                display:inline-block;
+            }
+            @media(max-width:600px){
+                .box{
+                    width:100%;
+                    display:block;
+                }
+                nav a{
+                    display:block;
+                    margin:5px 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Responsive Website</h1>
+        </header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div>
+            <div class="box">Box1</div>
+            <div class="box">Box2</div>
+            <div class="box">Box3</div>
+        </div>
+    </body>
+</html>
+<!-------------------------------------->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D Transformations Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 40px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 80px;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background: lightblue;
+      display: inline-flex;
+      align-items:flex-end;
+      justify-content:flex-end;
+      border: 3px solid #f31010;
+    }
+    .rotate:hover {
+      transform: rotate(360deg);
+      transition:width,ease-in-out,10s;
+       }
+    .scale:hover {
+      transform: scale(1.9, 0.8);
+      transition:width,ease-in-out,10s;
+    }
+    .translate:hover {
+      transform: translate(10px, 10px);
+      transition:width,ease-in-out,1s;
+    }
+    .skew:hover {
+      transform: skew(20deg, 10deg);
+      transition:width,ease-in-out,10s;
+    }
+    .matrix:hover {
+      /* matrix(a, b, c, d, e, f) */
+      transform: matrix(3, 0.5, 0.3, 0.1, 30, 20);
+      transition:width,ease-in-out,10s;
+    }
+  </style>
+</head>
+<body>
+  <h1>2D Transformations in CSS</h1>
+  <div class="container">
+    <div class="box rotate">Rotate</div>
+    <div class="box scale">Scale</div>
+    <div class="box translate">Translate</div>
+    <div class="box skew">Skew</div>
+    <div class="box matrix">Matrix</div>
+  </div>
+</body>
+</html>
+<!--------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS matrix() Transition Demo</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111827;
+      font-family: system-ui, sans-serif;
+      color: #e5e7eb;
+    }
+
+    .card {
+      width: 200px;
+      height: 120px;
+      background: linear-gradient(135deg, #2563eb, #38bdf8);
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      /* Initial transform (identity matrix: no change) */
+      transform: matrix(1, 0, 0, 1, 0, 0);
+
+      /* Animate any change to transform over 0.5s */
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      cursor: pointer;
+    }
+
+    .card h2 {
+      margin: 0 0 6px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    /* On hover, change to another matrix */
+    .card:hover {
+      /*
+        matrix(a,  b,   c,   d,   e,   f)
+        a = 1.1   -> scaleX  10% bigger
+        d = 1.1   -> scaleY  10% bigger
+        b = 0.2   -> slight skewY
+        c = -0.1  -> slight skewX
+        e = 60    -> move 60px right
+        f = -20   -> move 20px up
+      */
+      transform: matrix(1.1, 0.2, -0.1, 1.1, 6, -20);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>CSS matrix() Demo</h2>
+    <p>Hover to see matrix() transition</p>
+  </div>
+</body>
+</html>
+<!---------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions</title>
+    <style>
+        .container{
+            background-color: antiquewhite;
+            width: 50vw;
+            height: 40vh;
+        }
+
+        .box{
+            background-color: aquamarine;
+            width: 5vw;
+            height: 4vh;
+            transition-property: background-color, transform;
+            transition-duration: 3s;
+            transition-timing-function: cubic-bezier(0.22, 0.43, 0, 0.99);
+            transition-delay: 1s; 
+}
+
+        .translate:hover{
+            transform: translateX(10vw) translateY(10vh) scale(2);
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box translate"></div>
+    </div>
+</body>
+</html>
+<!--------------------->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic @keyframes Example</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            position: relative;              /* so left works */
+            animation: slide-right 2s linear infinite;
+            /* animation: name duration timing-function iteration-count */
+        }
+
+        /* define the animation steps */
+        @keyframes slide-right {
+            from {               /* same as 0% */
+                left: 0px;
+            }
+            to {                 /* same as 100% */
+                left: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+<!--------------------->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi-step @keyframes Example</title>
+    <style>
+        .ball {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: red;
+            position: relative;
+            animation :bounce 20s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0% {
+                top: 0px;
+                background: red;
+            }
+            50% {
+                top: 150px;
+                background: blue;
+            }
+          100% {
+                top: 0px;
+                background: green;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+</body>
+</html>
+<!-------------------->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Fade-in with @keyframes</title>
+    <style>
+        .fade-text {
+            font-size: 32px;
+            font-family: Arial, sans-serif;
+            animation: fade-in 1s ease-out 1 backwards;
+
+            /* forwards = keep final state after animation ends */
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <p class="fade-text">Hello, CSS keyframes!</p>
+</body>
+</html>
+<!------------------------------->
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Bootstrap - Display</title>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+      <div class="container m-3 p-5">
+        <div class="d-inline m-3 p-5 text-bg-success">d-inline-success</div>
+        <div class="d-inline m-1 p-4 text-bg-warning">d-inline-warning</div>
+      
+      </div>
+      <div class="conatiner mt-3">
+        <h4>Display-block</h4>
+        <span class="d-block p-3 text-bg-info">d block used for information</span>
+        <span class="d-block p-4 text-bg-primary">d block used for primary</span>
+      </div>
+    </body>
+</html>
+<!--------------------------------->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+</html>
+<div class="container">
+  <!-- Margin all sides, padding all sides -->
+  <div class="m-3 p-3 bg-primary text-white">
+    Margin 3, Padding 3
+  </div>
+
+  <!-- Different margin and padding sizes -->
+  <div class="m-5 p-1 bg-success text-white">
+    Margin 5, Padding 1
+  </div>
+</div>
+<div class="container">
+  <div class="mt-4 mb-2 bg-warning">
+    Top margin 4, bottom margin 2
+  </div>
+
+  <div class="mx-auto my-3 bg-info text-white" style="width: 200px;">
+    Centered with auto left/right margin
+  </div>
+</div>
+<div class="container">
+  <div class="pt-5 pb-2 bg-light border">
+    Extra top padding 5, bottom padding 3
+  </div>
+
+  <div class="px-4 py-2 bg-secondary text-white">
+    Padding x=4 (left & right), y=2 (top & bottom)
+  </div>
+</div>
+<!-------------------->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap - Visibility</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container mt-2">
+      <h4 class="display-5 text-success">Visibility utility classes</h4>
+    </div>
+
+    <div class="container mx-5 p-3">
+    <strong>The utility classes that controls the visibility of the content on the webpage.</strong>
+      <p class="visible text-bg-primary">
+         The text on the webpage is visible due to the use of visibility class ".visible".
+      </p>
+
+      <p class="invisible">
+        The text on the webpage is not visible due to the use of visibility class ".invisible".
+      </p>
+
+      <p class="text-bg-warning">This is the text that is without a visibility class usage.
+    </p>
+    </div>   
+    </body> 
+    </html>

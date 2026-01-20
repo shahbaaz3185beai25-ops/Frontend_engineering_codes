@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Responsive Flexbox Navbar with Pseudo-elements</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 0.5rem 1rem;
+    position: relative;
+  }
+
+  /* Logo with decorative bars before and after */
+  nav .logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    padding: 0 1rem;
+    transition: color 0.3s;
+  }
+  nav .logo::before,
+  nav .logo::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 3px;
+    background: #ffd700; /* Gold color decorative bar */
+    transform: translateY(-50%);
+  }
+  nav .logo::before {
+    left: 0;
+  }
+  nav .logo::after {
+    right: 0;
+  }
+  nav .logo:hover {
+    color: #ffd700;  /* Gold on hover */
+  }
+  nav .logo:active {
+    color: #ff6347;  /* Tomato on active */
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin-left: 1.5rem;
+    position: relative;
+  }
+
+  /* Decorative underline on hover using ::after */
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+    position: relative;
+    display: inline-block;
+  }
+  nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    height: 2px;
+    width: 0;
+    background-color: #ff6347; /* Tomato underline */
+    transition: width 0.3s ease;
+  }
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+
+  nav ul li a:hover {
+    background-color: #ff6347; /* Tomato background on hover */
+    color: #fffacd;            /* LemonChiffon text on hover */
+  }
+  nav ul li a:active {
+    background-color: #222;    /* Dark background on active */
+    color: #ffd700;            /* Gold text on active */
+  }
+
+  @media (min-width: 601px) {
+    nav {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      flex-direction: row;
+    }
+    nav ul li {
+      margin-left: 1.5rem;
+      margin-right: 0;
+      width: auto;
+    }
+  }
+
+  @media (max-width: 900px) and (min-width: 601px) {
+    nav {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav .logo {
+      flex-basis: 100%;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    nav ul {
+      justify-content: center;
+      flex-basis: 100%;
+      margin-top: 0;
+    }
+    nav ul li {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    nav .logo {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 0.5rem;
+    }
+    nav ul {
+      flex-direction: column;
+      width: 100%;
+      padding-left: 0;
+    }
+    nav ul li {
+      margin: 0.5rem 0;
+      margin-left: 0;
+      width: 100%;
+    }
+    nav ul li a {
+      display: block;
+      width: 100%;
+      padding: 0.5rem 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">MySite</div>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simple CSS Animations</title>
+<style>
+  /* Fade in/out animation for image */
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .fade-image {
+    width: 300px;
+    height: auto;
+    animation: fadeInOut 4s ease-in-out infinite;
+    display: block;
+    margin: 2rem auto;
+    border-radius: 8px;
+  }
+
+  /* Transform button on hover */
+  .animated-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .animated-button:hover {
+    transform: scale(1.1);
+    background-color: #0056b3;
+  }
+
+  .animated-button:active {
+    transform: scale(0.95);
+    background-color: #003d80;
+  }
+</style>
+</head>
+<body>
+
+<img src="https://via.placeholder.com/300x200.png?text=Fade+Animation" alt="Fade animation" class="fade-image" />
+
+<button class="animated-button">Hover Me</button>
+
+</body>
+</html>
+

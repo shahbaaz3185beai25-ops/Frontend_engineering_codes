@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Bootstrap - Display</title>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+      <div class="container m-3 p-5">
+        <div class="d-inline m-3 p-5 text-bg-success">d-inline-success</div>
+        <div class="d-inline m-1 p-4 text-bg-warning">d-inline-warning</div>
+      
+      </div>
+      <div class="conatiner mt-3">
+        <h4>Display-block</h4>
+        <span class="d-block p-3 text-bg-info">d block used for information</span>
+        <span class="d-block p-4 text-bg-primary">d block used for primary</span>
+      </div>
+    </body>
+</html>
+<!--------------------------------->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+</html>
+<div class="container">
+  <!-- Margin all sides, padding all sides -->
+  <div class="m-3 p-3 bg-primary text-white">
+    Margin 3, Padding 3
+  </div>
+
+  <!-- Different margin and padding sizes -->
+  <div class="m-5 p-1 bg-success text-white">
+    Margin 5, Padding 1
+  </div>
+</div>
+<div class="container">
+  <div class="mt-4 mb-2 bg-warning">
+    Top margin 4, bottom margin 2
+  </div>
+
+  <div class="mx-auto my-3 bg-info text-white" style="width: 200px;">
+    Centered with auto left/right margin
+  </div>
+</div>
+<div class="container">
+  <div class="pt-5 pb-2 bg-light border">
+    Extra top padding 5, bottom padding 3
+  </div>
+
+  <div class="px-4 py-2 bg-secondary text-white">
+    Padding x=4 (left & right), y=2 (top & bottom)
+  </div>
+</div>
+<!-------------------->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap - Visibility</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container mt-2">
+      <h4 class="display-5 text-success">Visibility utility classes</h4>
+    </div>
+
+    <div class="container mx-5 p-3">
+    <strong>The utility classes that controls the visibility of the content on the webpage.</strong>
+      <p class="visible text-bg-primary">
+         The text on the webpage is visible due to the use of visibility class ".visible".
+      </p>
+
+      <p class="invisible">
+        The text on the webpage is not visible due to the use of visibility class ".invisible".
+      </p>
+
+      <p class="text-bg-warning">This is the text that is without a visibility class usage.
+    </p>
+    </div>   
+    </body> 
+    </html>
+<!------------------------------>
+<html>
+<head>
+    <title>Bootstrap - Modal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body style="text-align:center;">
+    <div class="container mt-3" style="width:100px;">
+        <h4>Static method in modal</h4>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch modal</button>
+        <div class="modal" id="exampleModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title">Modal title</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body"><strong><h4>Example modals</h4></strong></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+<!--------------------------->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bootstrap Simple Modal</title>
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-5">
+
+  <!-- Button to open modal -->
+  <button type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#simpleModal">
+    Open Simple Modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="simpleModal" tabindex="3" aria-labelledby="simpleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="simpleModalLabel">Simple Modal Title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          This is a basic Bootstrap 5 modal body text.
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS (needs Popper, included in bundle) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<!---------------------------------->
+<html>
+<head>
+    <title>Bootstrap - Modal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"> Link with href </a>
+
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample">
+      Button with data-bs-target
+    </button>
+
+  <div class="collapse" id="collapseExample">
+
+    <div class="card card-body">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id.
+    </div>
+
+  </div>
+
+</body>
+</html>
+<!------------------------------->
+<!DOCTYPE html>
+<html>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page"href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://www.bing.com/search?qs=HS&pq=google&sk=CSYN1UAS8LS2AS11&sc=25-6&pglt=299&q=google&cvid=0b41e6cda7534dc09ef1d0b031a32bfd&gs_lcrp=EgRlZGdlKgYIABAAGEAyBggAEAAYQDIGCAEQLhhAMgYIAhAAGEAyBggDEC4YQDIGCAQQRRg8MgYIBRBFGDwyBggGEEUYPDIGCAcQRRg8MgYICBBFGDzSAQgxODY3ajBqMagCALACAA&FORM=ANNTA1&PC=SCOODB" target="_blank">Link</a>    
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href ="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    </li>
+  </ul>
+</html>
+<!---------------------------->
+<html>
+<head>
+    <title>Bootstrap - Modal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+
+
+<body>
+<div class="jumbotron">
+
+  <h1 class="display-4">Hello, world!</h1>
+ 
+ <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+
+  <hr class="my-4">
+
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+
+</div>
+</body>
+</html>
+<!---------------->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Basic Navbar</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="conatiner-fluid">
+            <a class="navbar-brand bg-light" href="#">My site</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarBasic">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pricing</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>
+<!----------------------------->
+
+

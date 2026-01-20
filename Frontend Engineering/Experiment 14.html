@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Responsive Flexbox Navbar with Media Queries</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center;            /* Center items vertically */
+    background-color: #333;
+    padding: 0.5rem 1rem;
+  }
+
+  nav .logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin-left: 1.5rem;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #ff6347; /* Tomato color on hover */
+  }
+
+  /* Media query for tablets and smaller desktops */
+  @media (max-width: 900px) {
+    nav {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav .logo {
+      flex-basis: 100%;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    nav ul {
+      justify-content: center;
+      flex-basis: 100%;
+    }
+
+    nav ul li {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+
+  /* Media query for mobile devices */
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;       /* Stack vertically */
+      align-items: flex-start;      /* Align left */
+    }
+
+    nav .logo {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 0.5rem;
+    }
+
+    nav ul {
+      flex-direction: column;
+      width: 100%;
+      padding-left: 0;
+    }
+
+    nav ul li {
+      margin: 0.5rem 0;
+      margin-left: 0;
+      width: 100%;
+    }
+
+    nav ul li a {
+      display: block;
+      width: 100%;
+      padding: 0.5rem 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">MySite</div>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>
